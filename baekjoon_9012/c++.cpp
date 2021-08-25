@@ -1,38 +1,39 @@
-import java.util.Scanner;
-import java.util.Stack;
-class Main {
-  public static void main(String[] args) throws Exception {
-    Scanner sc= new Scanner(System.in);
-    String k="";
-    Stack<Integer> stack=new Stack<>();
-    int n=sc.nextInt();
-    for(int i=0;i<n;i++){
-      String s=sc.next();
-      int ch=0;
-      for(int j=0;j<s.length();j++){
-        char c= s.charAt(j);
-        if(c=='('){
-          stack.push(1);
+#include <iostream>
+#include<stack>
+#include<string>
+
+using namespace std;
+int main() {
+  int a;
+
+  string b;
+  stack<int> s;
+  cin >> a ;
+  cin.ignore();
+
+  for(int i=0;i<a;i++){
+    getline(cin,b);
+    for(int i=0;i<b.size();i++){
+		  if (b[i]=='(') {
+        s.push(3);
+		  }
+		  else if (b[i]==')') {
+        if(s.empty()==1){
+          cout << "NO"<<endl;
+          goto ww;
         }
-        else{
-          if(stack.empty()){
-            ch++;
-          }
-          else{
-            stack.pop();
-          }
-        }
-      }
-      boolean check=stack.empty();
-      if(check&&ch==0){
-        k+="YES"+'\n';
-      }
-      else{
-        k+="NO"+'\n';
-      }
-      stack.clear();
+			  s.pop();
+		  }
     }
-    System.out.println(k);
-    sc.close();
-  }
+    if(s.size()==0){
+      cout << "YES"<<endl;
+    }
+    else {
+      cout <<"NO"<<endl;
+    }
+    ww:
+    while(!s.empty()){
+      s.pop();
+    }
+    }
 }
