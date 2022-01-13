@@ -6,6 +6,7 @@ using namespace std;
 map<int,int> order;//몇번째로 해당 숫자가 입력됐는지 확인
 bool cmp(const pair<int,int> &a, const pair<int,int> &b) {
 	if(a.first==b.first) return order[a.second]<order[b.second];//만약 앞에있는 숫자가 뒤에 있는 숫자보다 더 먼저 들어왔으면 true
+    //이 조건문으로 인해서 같은 횟수로 입력된 숫자는 입력된 순서를 유지할 수 있다
 	return a.first > b.first;
 }
 int main(){
