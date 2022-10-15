@@ -1,7 +1,11 @@
 #include<iostream>
 #include<vector>
+
 using namespace std;
+
+vector<vector<int>> graph;
 int erase,cnt=0;
+
 void dfs(vector<vector<int>> graph,int root){
   if(root==erase){return;}
   if(graph[root].size()==0){cnt++;return;}
@@ -15,7 +19,7 @@ void dfs(vector<vector<int>> graph,int root){
     dfs(graph,graph[root][i]);
   }
 }
-vector<vector<int>> graph;
+
 int main(){
   int num,root;
   cin>>num;
