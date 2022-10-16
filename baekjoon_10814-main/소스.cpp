@@ -1,6 +1,8 @@
 #include<iostream>
 #include<map>
+
 using namespace std;
+
 int main(){
   multimap<int,string> m;
   int n;
@@ -13,7 +15,6 @@ int main(){
     a=b;
     m.insert(pair<int ,string>(arr,a));
   }
-  for(auto iter = m.begin(); iter != m.end(); iter++){
+  for(auto iter = m.begin(); iter != m.end(); iter++)
         printf("%d %s\n",iter->first,iter->second.c_str());
-    }
 }
