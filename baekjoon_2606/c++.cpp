@@ -14,6 +14,8 @@ void dfs(int start,vector<int>graph[]){
   }
 }
 int main(){
+  ios::sync_with_stdio(false);
+  cin.tie(0);
   vector<int> graph[101];
   int n,m;
   cin>>n>>m;
