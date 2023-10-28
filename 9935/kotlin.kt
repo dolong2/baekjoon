@@ -28,7 +28,7 @@ fun main() {
                 }
             }
             if (match) {
-                repeat(targetLength) { result.deleteCharAt(result.length - 1) }
+                result.deleteRange(resultLength - targetLength, resultLength)
             }
         }
     }
